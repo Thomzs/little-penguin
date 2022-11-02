@@ -4,19 +4,19 @@
 #define DRIVER_AUTHOR "Thomas Meyer <tmeyer@student.42.fr>"
 #define DRIVER_DESC   "Just a Hello world"
 
-static int __init init_hello_4(void)
+static int __init init_hello(void)
 {
 	printk(KERN_INFO "Hello world! \n");
 	return 0;
 }
 
-static void __exit cleanup_hello_4(void)
+static void __exit cleanup_hello(void)
 {
 	printk(KERN_INFO "Cleaning up module.\n");
 }
 
-module_init(init_hello_4);
-module_exit(cleanup_hello_4);
+module_init(init_hello);
+module_exit(cleanup_hello);
 
 /*  
  *  You can use strings, like this:
