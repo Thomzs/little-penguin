@@ -1,0 +1,1 @@
+cmd_/home/tmeyer/little-penguin/A07/main.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/tmeyer/little-penguin/A07/main.ko /home/tmeyer/little-penguin/A07/main.o /home/tmeyer/little-penguin/A07/main.mod.o;  true

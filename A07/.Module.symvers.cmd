@@ -1,0 +1,1 @@
+cmd_/home/tmeyer/little-penguin/A07/Module.symvers :=  sed 's/ko$$/o/'  /home/tmeyer/little-penguin/A07/modules.order | scripts/mod/modpost      -o /home/tmeyer/little-penguin/A07/Module.symvers -e -i Module.symvers -T - 
