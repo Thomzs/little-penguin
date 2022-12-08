@@ -18,6 +18,7 @@ int	main(void)
 	{
 		printf("\n___ JIFFIES ___\n");
 		ret = read(fd, jbuf, 64);
+		jbuf[ret - 1] = '\0';
 		printf("read [%s] ret : %d\n", jbuf, ret);
 	}
 	else

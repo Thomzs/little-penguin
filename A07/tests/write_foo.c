@@ -5,20 +5,25 @@
 #include <sys/stat.h>
 #include <string.h>
 #include <strings.h>
+#include <errno.h>
 
-#define SIZE	8192
+#define PAGE_SIZE 4096
 
 int	main(void)
 {
 	int	fd;
 	int	ret;
-	char	buf[SIZE];
+	char	buf[PAGE_SIZE];
 
-	fd = open("/sys/kernel/debug/fortytwo/foo", O_RDWR);
-	memset(buf, 'A', SIZE);
+	fd = open("/sys/kernel/debug/fourtytwo/foo", O_RDWR);
+	memset(buf, 'A', PAGE_SIZE);
 	if (fd > 0)
 	{
-		ret = write(fd, buf, SIZE);
+		ret = write(fd, buf, PAGE_SIZE - 1);
+		if (ret == -1)
+		{
+			perror("error");
+		}
 		printf("1st write ret %d\n", ret);
 		close(fd);
 	}
